@@ -4,17 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinesh Kumar Pathipati | Data Science & ML Portfolio</title>
+    <title>Dinesh Kumar Pathipati | AI & ML Engineer</title>
     <meta name="description"
-        content="Portfolio of Dinesh Kumar Pathipati — B.Tech Data Science student specializing in Machine Learning, Deep Learning, and full-stack AI applications. AWS Certified AI Practitioner.">
-    <meta name="keywords" content="Dinesh Kumar, Data Science, Machine Learning, Deep Learning, Portfolio, Python, TensorFlow, AWS">
+        content="Dinesh Kumar Pathipati — AI / ML Engineer who trains deep learning models and ships them to production. Published computer-vision research, a serverless AWS platform serving 5,000+ users, AWS Certified AI Practitioner.">
+    <meta name="keywords" content="Dinesh Kumar Pathipati, AI Engineer, ML Engineer, Machine Learning, Deep Learning, Computer Vision, TensorFlow, AWS, Portfolio">
     <meta name="author" content="Dinesh Kumar Pathipati">
+    <link rel="canonical" href="https://portfolio-one-flame-92.vercel.app/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236c63ff'/%3E%3Cstop offset='1' stop-color='%2300d4aa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='800' fill='white' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0a0a0f">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Dinesh Kumar Pathipati | Data Science & ML Portfolio">
-    <meta property="og:description" content="B.Tech Data Science student building AI-powered full-stack applications with Python, TensorFlow, and Flask.">
+    <meta property="og:title" content="Dinesh Kumar Pathipati | AI & ML Engineer">
+    <meta property="og:description" content="I train deep learning models and ship them to production — published CV research, a serverless AWS platform serving 5,000+ users, AWS Certified AI Practitioner.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dinesh-kumar9.github.io">
+    <meta property="og:url" content="https://portfolio-one-flame-92.vercel.app/">
+    <meta property="og:image" content="https://portfolio-one-flame-92.vercel.app/dinesh_profile.jpeg">
+    <meta name="twitter:card" content="summary">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dinesh Kumar Pathipati",
+        "jobTitle": "AI / ML Engineer",
+        "url": "https://portfolio-one-flame-92.vercel.app/",
+        "image": "https://portfolio-one-flame-92.vercel.app/dinesh_profile.jpeg",
+        "email": "mailto:dineshkumarpathipati@gmail.com",
+        "alumniOf": "Rajeev Gandhi Memorial College of Engineering and Technology",
+        "sameAs": [
+            "https://www.linkedin.com/in/dinesh-kumar-pathipati",
+            "https://github.com/Dinesh-kumar9"
+        ],
+        "knowsAbout": ["Machine Learning", "Deep Learning", "Computer Vision", "Transfer Learning", "TensorFlow", "AWS"]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -889,6 +912,10 @@
             background: linear-gradient(90deg, #3b82f6, #8b5cf6);
         }
 
+        .skill-card:nth-child(6)::before {
+            background: linear-gradient(90deg, #a855f7, #ff6b9d);
+        }
+
         .skill-card:hover {
             border-color: var(--border-glow);
             transform: translateY(-6px);
@@ -949,6 +976,12 @@
             background: rgba(59, 130, 246, 0.08);
             border-color: rgba(59, 130, 246, 0.2);
             color: #60a5fa;
+        }
+
+        .skill-card:nth-child(6) .skill-tag {
+            background: rgba(168, 85, 247, 0.08);
+            border-color: rgba(168, 85, 247, 0.2);
+            color: #c084fc;
         }
 
         /* ===== Projects Section ===== */
@@ -1714,8 +1747,187 @@
             }
         }
 
+        /* ===== Nav Resume Button ===== */
+        .nav-links a.nav-resume {
+            color: var(--text-primary);
+            border: 1px solid var(--border-glow);
+            margin-left: 8px;
+        }
+
+        .nav-links a.nav-resume:hover {
+            background: var(--gradient-primary);
+            border-color: transparent;
+        }
+
+        /* ===== Notebook-to-Production Pipeline ===== */
+        .pipeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 56px;
+            counter-reset: step;
+        }
+
+        .pipeline-step {
+            position: relative;
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            transition: var(--transition-smooth);
+        }
+
+        .pipeline-step:hover {
+            border-color: var(--border-glow);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .pipeline-step::before {
+            counter-increment: step;
+            content: '0' counter(step);
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+            margin-bottom: 10px;
+        }
+
+        .pipeline-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            top: 50%;
+            right: -17px;
+            transform: translateY(-50%);
+            color: var(--accent-primary);
+            font-size: 1.1rem;
+            z-index: 1;
+        }
+
+        .pipeline-step h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pipeline-step p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* ===== Project Extras ===== */
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .project-card:nth-child(4) .project-card-header {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+
+        .project-card:nth-child(5) .project-card-header {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.15) 0%, rgba(245, 158, 11, 0.1) 100%);
+        }
+
+        .project-card-wide {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .project-card-wide .project-card-header {
+            height: auto;
+            min-height: 180px;
+        }
+
+        .project-card-wide .project-icon {
+            font-size: 5.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-card-wide {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card-wide .project-card-header {
+                min-height: 180px;
+            }
+        }
+
+        .project-featured {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 4px 12px;
+            background: rgba(10, 10, 15, 0.7);
+            border: 1px solid var(--border-glow);
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+        }
+
+        .project-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .project-metrics span {
+            padding: 4px 10px;
+            background: rgba(0, 212, 170, 0.08);
+            border: 1px solid rgba(0, 212, 170, 0.25);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-secondary);
+        }
+
+        .project-link.live {
+            background: rgba(0, 212, 170, 0.08);
+            border-color: rgba(0, 212, 170, 0.25);
+            color: var(--accent-secondary);
+        }
+
+        .project-link.live:hover {
+            background: rgba(0, 212, 170, 0.15);
+        }
+
+        /* ===== Reduced Motion ===== */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            #particles-canvas {
+                display: none;
+            }
+        }
+
         /* ===== Responsive ===== */
         @media (max-width: 1024px) {
+            .pipeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pipeline-step:nth-child(2)::after {
+                display: none;
+            }
+
             .hero-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -1743,12 +1955,9 @@
                 font-size: 5rem;
             }
 
-            .floating-badge:nth-child(3) {
-                right: -10px;
-            }
-
-            .floating-badge:nth-child(4) {
-                left: -10px;
+            /* Badges would cover the photo at this size; the same facts appear in the hero text and stats. */
+            .floating-badge {
+                display: none;
             }
 
             .about-grid {
@@ -1808,6 +2017,19 @@
                 grid-template-columns: 1fr;
             }
 
+            .pipeline {
+                grid-template-columns: 1fr;
+            }
+
+            .pipeline-step:not(:last-child)::after {
+                display: none;
+            }
+
+            .nav-links a.nav-resume {
+                margin-left: 0;
+                text-align: center;
+            }
+
             .certs-grid {
                 grid-template-columns: 1fr;
             }
@@ -1843,14 +2065,15 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">DK.</a>
+            <a href="#hero" class="nav-logo" aria-label="Back to top">DK.</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#hero" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#publications">Research</a></li>
+                <li><a href="#hackathons">Awards</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="Dinesh_Kumar_Resume.pdf" class="nav-resume" target="_blank" rel="noopener">Resume ↓</a></li>
             </ul>
             <div class="nav-social">
                 <a href="https://www.linkedin.com/in/dinesh-kumar-pathipati" target="_blank" rel="noopener noreferrer"
@@ -1868,7 +2091,8 @@
                     </svg>
                 </a>
             </div>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="navLinks">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1882,24 +2106,25 @@
             <div class="hero-text">
                 <div class="hero-badge">
                     <span class="pulse-dot"></span>
-                    Open to Opportunities
+                    Open to AI Engineer &amp; ML Engineer roles
                 </div>
                 <h1>
                     Hi, I'm<br>
                     <span class="gradient-text">Dinesh Kumar</span>
                 </h1>
                 <p class="hero-role">
-                    Building intelligent systems with
-                    <span class="typing-text" id="typingText"></span><span class="typing-cursor"></span>
+                    AI / ML Engineer who trains models <strong>and ships them to production</strong>.<br>
+                    Currently building <span class="typing-text" id="typingText" aria-hidden="true"></span><span
+                        class="typing-cursor" aria-hidden="true"></span>
                 </p>
                 <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">
+                    <a href="Dinesh_Kumar_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                        Download Resume
+                    </a>
+                    <a href="#projects" class="btn btn-outline">
                         <svg viewBox="0 0 24 24"><path d="M13.13 22.19L11.5 18.36C13.07 17.78 14.54 17 15.9 16.09L13.13 22.19M5.64 12.5L1.81 10.87L7.91 8.1C7 9.46 6.22 10.93 5.64 12.5M19.22 4C19.5 4 19.75 4 19.96 4.05C20.13 5.44 19.94 8.3 16.66 11.58C14.96 13.29 12.93 14.6 10.65 15.47L8.5 13.37C9.42 11.06 10.73 9.03 12.42 7.34C14.73 5.03 17.3 4.08 19.22 4M19.22 2C17.24 2 14.24 2.69 11 5.93C8.81 8.12 7.5 10.53 6.65 12.64C6.37 13.39 6.56 14.21 7.11 14.77L9.24 16.89C9.62 17.28 10.13 17.5 10.66 17.5C10.89 17.5 11.13 17.44 11.36 17.35C13.5 16.53 15.88 15.19 18.07 13C23.73 7.34 21.61 2.39 21.61 2.39S20.7 2 19.22 2M14.54 9.46C13.76 8.68 13.76 7.41 14.54 6.63S16.59 5.85 17.37 6.63C18.14 7.41 18.15 8.68 17.37 9.46C16.59 10.24 15.32 10.24 14.54 9.46M8.88 16.53L7.47 15.12L8.88 16.53M6.24 22L8.88 16.53L7.47 15.12L2 17.76L4.59 19.41L6.24 22Z"/></svg>
                         View Projects
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        Get in Touch
                     </a>
                 </div>
                 <div class="hero-social">
@@ -1929,16 +2154,17 @@
                 <div class="hero-avatar-container">
                     <div class="avatar-ring"></div>
                     <div class="avatar-inner">
-                        <img src="dinesh_profile.jpeg" alt="Dinesh Kumar Pathipati - Data Science & ML Engineer" loading="eager">
+                        <img src="dinesh_profile.jpeg" alt="Dinesh Kumar Pathipati" width="308" height="308"
+                            loading="eager">
                     </div>
                     <div class="floating-badge">
-                        <span class="badge-icon">🧠</span> Aspiring ML Engineer
+                        <span class="badge-icon">🧠</span> AI / ML Engineer
                     </div>
                     <div class="floating-badge">
-                        <span class="badge-icon">☁️</span> AWS Certified
+                        <span class="badge-icon">☁️</span> AWS Certified AI Practitioner
                     </div>
                     <div class="floating-badge">
-                        <span class="badge-icon">🐍</span> Python
+                        <span class="badge-icon">🚀</span> 5,000+ users in prod
                     </div>
                 </div>
             </div>
@@ -1949,19 +2175,19 @@
     <div class="section" style="padding-top: 0; padding-bottom: 40px;">
         <div class="stats-bar reveal">
             <div class="stat-item">
-                <div class="stat-number" data-target="3" data-suffix="+">0</div>
-                <div class="stat-label">Projects Built</div>
+                <div class="stat-number" data-target="5000" data-suffix="+">5,000+</div>
+                <div class="stat-label">Users on a Platform I Deployed</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number" data-target="4" data-suffix="">0</div>
-                <div class="stat-label">Certifications</div>
+                <div class="stat-number" data-target="4" data-suffix="">4</div>
+                <div class="stat-label">Apps Live in Production</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number" data-target="90" data-suffix="%">0</div>
-                <div class="stat-label">Model Accuracy</div>
+                <div class="stat-number" data-target="5" data-suffix="">5</div>
+                <div class="stat-label">Podium Finishes</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number" data-target="8.52" data-suffix="" data-decimal="true">0</div>
+                <div class="stat-number" data-target="8.52" data-suffix="" data-decimal="true">8.52</div>
                 <div class="stat-label">CGPA / 10</div>
             </div>
         </div>
@@ -1973,26 +2199,32 @@
     <section class="section" id="about">
         <div class="reveal">
             <span class="section-label">About Me</span>
-            <h2 class="section-title">Turning Data Into<br>Intelligent Solutions</h2>
-            <p class="section-subtitle">A driven Data Science undergraduate with a strong foundation in software
-                engineering, machine learning, and real-world problem solving.</p>
+            <h2 class="section-title">From Notebook<br>to Production</h2>
+            <p class="section-subtitle">A model is only useful once real people can use it. I build the whole path —
+                training, serving, and the cloud infrastructure underneath.</p>
         </div>
         <div class="about-grid">
             <div class="about-text reveal">
                 <p>
-                    I'm a B.Tech student in Data Science at Rajeev Gandhi Memorial College of Engineering and
-                    Technology, Anantapur. My journey is driven by a deep curiosity in understanding how algorithms learn
-                    from data and how to build scalable software systems.
+                    I'm a final-year B.Tech Data Science student at Rajeev Gandhi Memorial College of Engineering and
+                    Technology, Nandyal, looking for <strong style="color: var(--accent-secondary);">AI Engineer and ML
+                        Engineer roles</strong>.
                 </p>
                 <p>
-                    I specialize in building and deploying <strong style="color: var(--accent-secondary);">AI-powered
-                        full-stack applications</strong> — from training deep learning models like MobileNetV2 to
-                    designing REST APIs and scalable backend systems with Flask and MongoDB.
+                    My flagship project is a crop disease detector: a MobileNetV2 transfer-learning model that reaches
+                    ~90% accuracy across 10+ disease classes. It's served through a Flask API, combined with live
+                    weather data, and deployed for anyone to use. The research behind it is published in IJMRT and
+                    won 3rd place at an international student conference.
                 </p>
                 <p>
-                    My approach is research-oriented: I believe in understanding the math behind the models, not just
-                    calling library functions. This philosophy drives me to build more robust and interpretable
-                    solutions — and earned me a published research paper and 3rd place at an international conference.
+                    I care about what happens after deployment. I built an MLOps observability platform that detects
+                    data drift and pinpoints which pipeline stage caused it, and an LLM agent on Gemini that placed 3rd
+                    of 600+ at PromptWars. I also designed and deployed RGMCET Eduflow, a serverless AWS platform that
+                    about 5,000 students and faculty use across campus.
+                </p>
+                <p>
+                    I like understanding the math behind models too — I've implemented regression and gradient
+                    descent from scratch to see how they actually learn.
                 </p>
                 <div class="about-details">
                     <div class="about-detail-item">
@@ -2017,7 +2249,7 @@
                 <div class="edu-icon">🎓</div>
                 <div class="edu-degree">Bachelor of Technology</div>
                 <div class="edu-field">Data Science</div>
-                <div class="edu-college">Rajeev Gandhi Memorial College of Engineering and Technology</div>
+                <div class="edu-college">Rajeev Gandhi Memorial College of Engineering and Technology, Nandyal</div>
                 <div class="edu-meta">
                     <div class="edu-meta-item">
                         📅 <span class="highlight">2023 – 2027</span> (Expected)
@@ -2040,6 +2272,28 @@
                 </div>
             </div>
         </div>
+        <div class="pipeline">
+            <div class="pipeline-step reveal reveal-delay-1">
+                <h3>Train</h3>
+                <p>CNNs and transfer learning (MobileNetV2) in TensorFlow / Keras, evaluated with accuracy, precision,
+                    recall, and F1.</p>
+            </div>
+            <div class="pipeline-step reveal reveal-delay-2">
+                <h3>Serve</h3>
+                <p>Models and LLM pipelines behind FastAPI / Flask REST APIs, with async jobs on Celery and a
+                    versioned model registry.</p>
+            </div>
+            <div class="pipeline-step reveal reveal-delay-3">
+                <h3>Deploy</h3>
+                <p>Docker, GitHub Actions CI, and Terraform; serverless on AWS (Lambda, API Gateway, RDS, CloudFront)
+                    — in production for ~5,000 users.</p>
+            </div>
+            <div class="pipeline-step reveal reveal-delay-4">
+                <h3>Monitor</h3>
+                <p>Drift detection with KS tests and ADWIN, root-cause attribution by pipeline stage, and gated
+                    retraining.</p>
+            </div>
+        </div>
     </section>
 
     <div class="section-divider"></div>
@@ -2049,69 +2303,96 @@
         <div class="reveal">
             <span class="section-label">Technical Skills</span>
             <h2 class="section-title">My Tech Arsenal</h2>
-            <p class="section-subtitle">A comprehensive toolkit spanning languages, frameworks, machine learning, and
-                cloud — built through hands-on project experience.</p>
+            <p class="section-subtitle">The tools I've used to build and ship real projects, grouped by where they
+                fit in the ML lifecycle.</p>
         </div>
         <div class="skills-grid">
             <div class="skill-card reveal reveal-delay-1">
-                <div class="skill-card-icon">💻</div>
-                <h3>Languages & Core CS</h3>
+                <div class="skill-card-icon">🤖</div>
+                <h3>Machine Learning &amp; Deep Learning</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">DSA</span>
-                    <span class="skill-tag">OOP</span>
-                    <span class="skill-tag">DBMS</span>
-                    <span class="skill-tag">OS</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">CNN</span>
+                    <span class="skill-tag">ANN</span>
+                    <span class="skill-tag">Transfer Learning</span>
+                    <span class="skill-tag">MobileNetV2</span>
+                    <span class="skill-tag">XGBoost</span>
+                    <span class="skill-tag">Computer Vision</span>
+                </div>
+            </div>
+            <div class="skill-card reveal reveal-delay-1">
+                <div class="skill-card-icon">🧭</div>
+                <h3>MLOps &amp; GenAI</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Drift Detection (KS, ADWIN)</span>
+                    <span class="skill-tag">Model Registry</span>
+                    <span class="skill-tag">Celery</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">GitHub Actions</span>
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">LLM Agents</span>
+                    <span class="skill-tag">Gemini API</span>
+                    <span class="skill-tag">Prompt Engineering</span>
                 </div>
             </div>
             <div class="skill-card reveal reveal-delay-2">
-                <div class="skill-card-icon">🤖</div>
-                <h3>ML / Deep Learning</h3>
+                <div class="skill-card-icon">☁️</div>
+                <h3>Cloud &amp; Deployment (AWS)</h3>
                 <div class="skill-tags">
-                    <span class="skill-tag">CNN</span>
-                    <span class="skill-tag">ANN</span>
-                    <span class="skill-tag">MobileNetV2</span>
-                    <span class="skill-tag">Transfer Learning</span>
-                    <span class="skill-tag">Scikit-learn</span>
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Lambda</span>
+                    <span class="skill-tag">API Gateway</span>
+                    <span class="skill-tag">RDS PostgreSQL</span>
+                    <span class="skill-tag">RDS Proxy</span>
+                    <span class="skill-tag">S3</span>
+                    <span class="skill-tag">CloudFront</span>
+                    <span class="skill-tag">Cognito</span>
+                    <span class="skill-tag">VPC</span>
+                    <span class="skill-tag">IAM</span>
                 </div>
             </div>
             <div class="skill-card reveal reveal-delay-3">
                 <div class="skill-card-icon">🌐</div>
-                <h3>Web & Tools</h3>
+                <h3>Backend, APIs &amp; Data</h3>
                 <div class="skill-tags">
+                    <span class="skill-tag">FastAPI</span>
                     <span class="skill-tag">Flask</span>
                     <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">Prisma ORM</span>
+                    <span class="skill-tag">PostgreSQL</span>
                     <span class="skill-tag">MongoDB</span>
                     <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Git &amp; GitHub</span>
                     <span class="skill-tag">Postman</span>
-                    <span class="skill-tag">VS Code</span>
                 </div>
             </div>
             <div class="skill-card reveal reveal-delay-4">
+                <div class="skill-card-icon">💻</div>
+                <h3>Languages &amp; Core CS</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">DSA</span>
+                    <span class="skill-tag">OOP</span>
+                    <span class="skill-tag">DBMS</span>
+                    <span class="skill-tag">OS</span>
+                    <span class="skill-tag">Computer Networks</span>
+                </div>
+            </div>
+            <div class="skill-card reveal reveal-delay-5">
                 <div class="skill-card-icon">📐</div>
-                <h3>Mathematics</h3>
+                <h3>Math for ML</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Linear Algebra</span>
                     <span class="skill-tag">Probability</span>
                     <span class="skill-tag">Statistics</span>
                     <span class="skill-tag">Optimization</span>
                     <span class="skill-tag">Gradient Descent</span>
-                </div>
-            </div>
-            <div class="skill-card reveal reveal-delay-5">
-                <div class="skill-card-icon">☁️</div>
-                <h3>Cloud & DevOps</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">AWS Cloud Foundations</span>
-                    <span class="skill-tag">AWS Cloud Architecting</span>
-                    <span class="skill-tag">GitHub</span>
-                    <span class="skill-tag">SDLC</span>
                 </div>
             </div>
         </div>
@@ -2123,58 +2404,186 @@
     <section class="section" id="projects">
         <div class="reveal">
             <span class="section-label">Projects</span>
-            <h2 class="section-title">What I've Built</h2>
-            <p class="section-subtitle">Real-world projects that showcase my ability to apply data science, machine
-                learning, and engineering principles to solve meaningful problems.</p>
+            <h2 class="section-title">What I've Built &amp; Shipped</h2>
+            <p class="section-subtitle">Models and systems built to be used, not left in a notebook. Most are live
+                — try the demos or read the code.</p>
         </div>
         <div class="projects-grid">
             <!-- Project 1 - Crop Disease (Flagship) -->
-            <div class="project-card reveal reveal-delay-1">
+            <article class="project-card project-card-wide reveal reveal-delay-1">
                 <div class="project-card-header">
-                    <span class="project-icon">🌾</span>
+                    <span class="project-featured">★ Flagship · Published research</span>
+                    <span class="project-icon" aria-hidden="true">🌾</span>
                 </div>
                 <div class="project-card-body">
-                    <div class="project-category">Deep Learning / Full-Stack AI</div>
+                    <div class="project-category">Computer Vision / Deep Learning</div>
                     <h3>Intelligent Crop Disease Identification System</h3>
+                    <div class="project-metrics">
+                        <span>~90% accuracy</span>
+                        <span>10+ disease classes</span>
+                        <span>English &amp; Telugu</span>
+                    </div>
                     <ul class="project-description">
-                        <li>Built a full-stack AI web app using MobileNetV2 (transfer learning) to classify crop
-                            diseases across 10+ categories with <strong
-                                style="color: var(--accent-secondary);">~90% accuracy</strong></li>
-                        <li>Integrated OpenWeatherMap API for real-time, weather-based disease risk analysis and
-                            auto-generated spraying schedules</li>
-                        <li>Designed a multilingual (English & Telugu) advisory module backed by MongoDB for scalable
-                            data retrieval</li>
+                        <li>Fine-tuned MobileNetV2 with transfer learning to classify crop diseases from leaf images,
+                            and served it through a Flask REST API in a full-stack web app</li>
+                        <li>Combined predictions with real-time OpenWeatherMap data to estimate disease risk and
+                            auto-generate spraying schedules</li>
+                        <li>Built a multilingual advisory module on MongoDB so farmers can get guidance in their own
+                            language</li>
                     </ul>
                     <div class="project-tech">
                         <span>Python</span>
-                        <span>Flask</span>
                         <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>Flask</span>
                         <span>MongoDB</span>
-                        <span>REST API</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Dinesh-kumar9" class="project-link" target="_blank"
-                            rel="noopener noreferrer">
+                        <a href="https://crop-disease-identification.onrender.com/" class="project-link live"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm5 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Dinesh-kumar9/crop-disease-prediction" class="project-link"
+                            target="_blank" rel="noopener noreferrer">
                             <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                            View on GitHub
+                            Code
                         </a>
                     </div>
                 </div>
-            </div>
-            <!-- Project 2 - Smart Queue -->
-            <div class="project-card reveal reveal-delay-2">
+            </article>
+            <!-- Project 2 - MLOps Drift Detection -->
+            <article class="project-card reveal reveal-delay-2">
                 <div class="project-card-header">
-                    <span class="project-icon">⏱️</span>
+                    <span class="project-featured">★ MLOps</span>
+                    <span class="project-icon" aria-hidden="true">🧭</span>
                 </div>
                 <div class="project-card-body">
-                    <div class="project-category">Full-Stack System</div>
-                    <h3>Smart Queue — Virtual Queue Management</h3>
+                    <div class="project-category">MLOps / Model Monitoring</div>
+                    <h3>MLOps Observability Platform — Drift Detection &amp; Root-Cause Attribution</h3>
+                    <div class="project-metrics">
+                        <span>3 pipeline stages monitored</span>
+                        <span>8-service Docker stack</span>
+                        <span>CI/CD</span>
+                    </div>
                     <ul class="project-description">
-                        <li>Architected a real-time virtual queue management system supporting 50+ concurrent users
-                            with dynamic wait-time estimation</li>
-                        <li>Designed priority-based scheduling algorithms for customer allocation, reducing average
-                            wait time through intelligent optimization</li>
-                        <li>Built live tracking via REST APIs with database-backed architecture</li>
+                        <li>Most tools only flag drift at the model output. This platform monitors ingestion, preprocessing, and predictions separately, then ranks <em>which</em> stage caused the drift by magnitude and onset time</li>
+                        <li>Batch drift detection with KS tests (SciPy) and streaming detection with ADWIN (River), scheduled every 5 minutes by Celery Beat with Slack alerts</li>
+                        <li>Full model lifecycle: async training of Random Forest, XGBoost, and Logistic Regression, a staging-to-production model registry, and a cost-benefit and human-approval gate before retraining</li>
+                        <li>FastAPI + React/TypeScript, containerised with Docker Compose, AWS infrastructure defined in Terraform, tested in GitHub Actions</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>FastAPI</span>
+                        <span>Celery</span>
+                        <span>Redis</span>
+                        <span>PostgreSQL</span>
+                        <span>XGBoost</span>
+                        <span>River</span>
+                        <span>Docker</span>
+                        <span>Terraform</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dinesh-kumar9/Drift_Detection" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <!-- Project 3 - Reel Intelligence -->
+            <article class="project-card reveal reveal-delay-3">
+                <div class="project-card-header">
+                    <span class="project-featured">🥉 PromptWars 3rd place</span>
+                    <span class="project-icon" aria-hidden="true">🎯</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-category">GenAI / LLM Agent</div>
+                    <h3>Reel Intelligence — LLM Recommendation Agent</h3>
+                    <div class="project-metrics">
+                        <span>92.78 / 100</span>
+                        <span>600+ competitors</span>
+                        <span>21/21 tests passing</span>
+                    </div>
+                    <ul class="project-description">
+                        <li>A Gemini-powered agent that infers a student's real tech interests from their Instagram Reel history and recommends genuinely educational content, filtering out hype and clickbait</li>
+                        <li>Merged a 3-stage reasoning pipeline (signal extraction → intent clustering → hype-filtered recommendation) into one structured LLM call, cutting API usage by 90%</li>
+                        <li>Production-hardened: API-key rotation on 429/503 errors, server-side secrets, a schema-validated 8-field output, and serverless deployment on Vercel</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Node.js</span>
+                        <span>Gemini API</span>
+                        <span>Prompt Engineering</span>
+                        <span>Vercel</span>
+                        <span>Docker</span>
+                        <span>GitHub Actions</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://reel-intelligence-omega.vercel.app" class="project-link live" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm5 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Dinesh-kumar9/Hack2skill_Challenge" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            Code
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <!-- Project 4 - RGMCET Eduflow -->
+            <article class="project-card reveal reveal-delay-1">
+                <div class="project-card-header">
+                    <span class="project-featured">★ In production</span>
+                    <span class="project-icon" aria-hidden="true">🏫</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-category">Cloud / Serverless on AWS</div>
+                    <h3>RGMCET Eduflow — Campus-Wide Student Platform</h3>
+                    <div class="project-metrics">
+                        <span>~5,000 students</span>
+                        <span>30–40 faculty</span>
+                        <span>Fully serverless</span>
+                    </div>
+                    <ul class="project-description">
+                        <li>Designed and deployed a serverless full-stack platform on AWS: Lambda, API Gateway, RDS
+                            PostgreSQL with RDS Proxy, S3, CloudFront, and Cognito</li>
+                        <li>Built a secure VPC architecture with Prisma ORM for scalable database access</li>
+                        <li>Owned the cloud deployment end to end, taking a class project to a system the whole
+                            institution now uses</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>AWS Lambda</span>
+                        <span>API Gateway</span>
+                        <span>RDS</span>
+                        <span>Cognito</span>
+                        <span>CloudFront</span>
+                        <span>Prisma</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://d1r0k8fn16z5du.cloudfront.net/#/" class="project-link live" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm5 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+            <!-- Project 5 - Smart Queue -->
+            <article class="project-card reveal reveal-delay-2">
+                <div class="project-card-header">
+                    <span class="project-icon" aria-hidden="true">⏱️</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-category">Full-Stack / Scheduling Algorithms</div>
+                    <h3>Smart Queue — Virtual Queue Management</h3>
+                    <div class="project-metrics">
+                        <span>50+ concurrent users</span>
+                        <span>Real-time tracking</span>
+                    </div>
+                    <ul class="project-description">
+                        <li>Built a real-time virtual queue system with dynamic wait-time estimation and live tracking
+                            over REST APIs</li>
+                        <li>Designed priority-based scheduling algorithms for customer allocation to cut average wait
+                            time</li>
                     </ul>
                     <div class="project-tech">
                         <span>Python</span>
@@ -2183,45 +2592,19 @@
                         <span>REST API</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Dinesh-kumar9" class="project-link" target="_blank"
+                        <a href="https://smrtqueue.vercel.app/" class="project-link live" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm5 16H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Dinesh-kumar9/smrtqueue" class="project-link" target="_blank"
                             rel="noopener noreferrer">
                             <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                            View on GitHub
+                            Code
                         </a>
                     </div>
                 </div>
-            </div>
-            <!-- Project 3 - ML from Scratch -->
-            <div class="project-card reveal reveal-delay-3">
-                <div class="project-card-header">
-                    <span class="project-icon">📈</span>
-                </div>
-                <div class="project-card-body">
-                    <div class="project-category">Machine Learning</div>
-                    <h3>ML Algorithms from Scratch</h3>
-                    <ul class="project-description">
-                        <li>Implemented Linear & Logistic Regression from scratch in NumPy, deriving cost functions
-                            and optimizing via Gradient Descent</li>
-                        <li>Benchmarked custom models against Scikit-learn using accuracy, precision, recall, and
-                            F1-score — within <strong style="color: var(--accent-secondary);">2% margin</strong>
-                        </li>
-                        <li>Built core ML intuition through mathematical derivation and convergence analysis</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>NumPy</span>
-                        <span>Scikit-learn</span>
-                        <span>Mathematics</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Dinesh-kumar9" class="project-link" target="_blank"
-                            rel="noopener noreferrer">
-                            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                            View on GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -2314,10 +2697,20 @@
         <div class="reveal">
             <span class="section-label">Hackathons & Competitions</span>
             <h2 class="section-title">Compete & Conquer</h2>
-            <p class="section-subtitle">Consistently winning at competitive programming and hackathon events.</p>
+            <p class="section-subtitle">Building under pressure, and placing.</p>
         </div>
         <div class="hack-grid">
             <div class="hack-card reveal reveal-delay-1">
+                <span class="hack-trophy">🥉</span>
+                <div class="hack-place">3rd Place · 92.78 / 100</div>
+                <h3>PromptWars by Hack2Skill</h3>
+                <p>Built "Reel Intelligence", a Gemini-powered recommendation agent, competing against 600+
+                    students</p>
+                <div class="hack-count">
+                    🤖 GenAI / LLM Agent
+                </div>
+            </div>
+            <div class="hack-card reveal reveal-delay-2">
                 <span class="hack-trophy">🏆</span>
                 <div class="hack-place">1st Place Winner</div>
                 <h3>Branch-Level Hackathons</h3>
@@ -2327,7 +2720,7 @@
                     🔥 3 Hackathons Won
                 </div>
             </div>
-            <div class="hack-card reveal reveal-delay-2">
+            <div class="hack-card reveal reveal-delay-3">
                 <span class="hack-trophy">🥉</span>
                 <div class="hack-place">3rd Place</div>
                 <h3>International Conference</h3>
@@ -2346,14 +2739,15 @@
         <div class="reveal">
             <span class="section-label">Contact</span>
             <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">Have an opportunity, a project idea, or just want to say hi? I'd love to hear
-                from you.</p>
+            <p class="section-subtitle">Hiring for an AI or ML Engineer role, or want to talk about a project? I'd
+                love to hear from you.</p>
         </div>
         <div class="contact-container">
             <div class="contact-info reveal">
                 <h3>Get in Touch</h3>
-                <p>I'm currently open to internships, research collaborations, and interesting data science projects.
-                    Let's build something meaningful together.</p>
+                <p>I'm looking for <strong style="color: var(--accent-secondary);">AI Engineer and ML Engineer
+                        roles</strong> (graduating 2027) where I can train models and own them in production. Email
+                    is the fastest way to reach me.</p>
                 <div class="contact-links">
                     <a href="mailto:dineshkumarpathipati@gmail.com" class="contact-link">
                         <div class="contact-link-icon">
@@ -2406,6 +2800,8 @@
             </div>
             <form class="contact-form reveal" id="contactForm" onsubmit="handleFormSubmit(event)">
                 <h3>Send a Message</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin: -12px 0 20px;">Opens your email app
+                    with the message ready to send.</p>
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" placeholder="John Doe" required>
@@ -2419,7 +2815,7 @@
                     <textarea id="message" name="message" placeholder="Hi Dinesh, I'd like to discuss..."
                         required></textarea>
                 </div>
-                <button type="submit" class="form-submit">Send Message →</button>
+                <button type="submit" class="form-submit">Write Email →</button>
             </form>
         </div>
     </section>
@@ -2447,7 +2843,7 @@
                 </svg>
             </a>
         </div>
-        <p>Designed & Built by <strong>Dinesh Kumar</strong> with <span class="heart">❤</span></p>
+        <p>Designed &amp; built by <strong>Dinesh Kumar Pathipati</strong> · AI / ML Engineer</p>
         <p style="margin-top: 8px; font-size: 0.78rem;">© 2026 — All rights reserved.</p>
     </footer>
 
@@ -2459,6 +2855,8 @@
     </button>
 
     <script>
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         // ===== Particle Animation =====
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
@@ -2537,23 +2935,24 @@
             requestAnimationFrame(animateParticles);
         }
 
-        resizeCanvas();
-        initParticles();
-        animateParticles();
-        window.addEventListener('resize', () => {
+        if (!prefersReducedMotion) {
             resizeCanvas();
             initParticles();
-        });
+            animateParticles();
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                initParticles();
+            });
+        }
 
         // ===== Typing Animation =====
         const typingEl = document.getElementById('typingText');
         const roles = [
-            'Machine Learning',
-            'Deep Learning',
-            'Data Science',
-            'Full-Stack AI Apps',
-            'Computer Vision',
-            'Cloud Computing'
+            'computer vision models',
+            'MLOps & drift monitoring',
+            'LLM-powered agents',
+            'serverless AI on AWS',
+            'end-to-end ML systems'
         ];
         let roleIndex = 0;
         let charIndex = 0;
@@ -2585,7 +2984,11 @@
             setTimeout(typeRole, typingSpeed);
         }
 
-        typeRole();
+        if (prefersReducedMotion) {
+            typingEl.textContent = roles[roles.length - 1];
+        } else {
+            typeRole();
+        }
 
         // ===== Navbar Scroll Effect =====
         const navbar = document.getElementById('navbar');
@@ -2619,12 +3022,14 @@
         const navLinksEl = document.getElementById('navLinks');
 
         mobileToggle.addEventListener('click', () => {
-            navLinksEl.classList.toggle('active');
+            const open = navLinksEl.classList.toggle('active');
+            mobileToggle.setAttribute('aria-expanded', open);
         });
 
         navLinksEl.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinksEl.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', false);
             });
         });
 
@@ -2654,19 +3059,24 @@
                     const target = parseFloat(el.getAttribute('data-target'));
                     const suffix = el.getAttribute('data-suffix') || '';
                     const isDecimal = el.getAttribute('data-decimal') === 'true';
+                    const format = n => isDecimal ? n.toFixed(2) : Math.floor(n).toLocaleString('en-US');
+                    counterObserver.unobserve(el);
+                    if (prefersReducedMotion) {
+                        el.textContent = format(target) + suffix;
+                        return;
+                    }
                     let count = 0;
                     const steps = 40;
                     const increment = target / steps;
                     const timer = setInterval(() => {
                         count += increment;
                         if (count >= target) {
-                            el.textContent = (isDecimal ? target.toFixed(2) : Math.round(target)) + suffix;
+                            el.textContent = format(target) + suffix;
                             clearInterval(timer);
                         } else {
-                            el.textContent = isDecimal ? count.toFixed(2) : Math.floor(count);
+                            el.textContent = format(count);
                         }
                     }, 40);
-                    counterObserver.unobserve(el);
                 }
             });
         }, { threshold: 0.5 });
@@ -2685,35 +3095,27 @@
         });
 
         // ===== Contact Form =====
+        // No backend: hand the message to the visitor's email client so it actually gets sent.
         function handleFormSubmit(e) {
             e.preventDefault();
             const form = e.target;
-            const btn = form.querySelector('.form-submit');
-            const originalText = btn.textContent;
-
-            btn.textContent = 'Sending...';
-            btn.style.opacity = '0.7';
-
-            setTimeout(() => {
-                btn.textContent = '✅ Message Sent!';
-                btn.style.background = 'linear-gradient(135deg, #00d4aa, #06b6d4)';
-                btn.style.opacity = '1';
-                form.reset();
-
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                }, 3000);
-            }, 1200);
+            const { name, email, message } = Object.fromEntries(
+                [...new FormData(form)].map(([k, v]) => [k, v.trim()]));
+            const subject = `Portfolio enquiry from ${name}`;
+            const body = `${message}\n\n— ${name} (${email})`;
+            window.location.href = 'mailto:dineshkumarpathipati@gmail.com'
+                + '?subject=' + encodeURIComponent(subject)
+                + '&body=' + encodeURIComponent(body);
         }
 
         // ===== Smooth Scroll for Hash Links =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                const target = href.length > 1 && document.querySelector(href);
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
                 }
             });
         });
