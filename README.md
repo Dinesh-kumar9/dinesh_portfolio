@@ -12,7 +12,8 @@ One hand-written page, with no framework and no build step:
   and an MLOps drift-attribution platform (in progress, Phase 1 of 4 shipped).
 - **An interactive drift lab**: a two-sample Kolmogorov–Smirnov test that runs in the browser.
   Shift the live data and watch the statistic and p-value respond.
-- Light and dark themes, a keyboard-accessible chart with a table view, and reduced-motion support.
+- A live neural-network hero (signals fire through the layers and react to the cursor), glass project cards with real screenshots, and case studies in dialogs.
+- A keyboard-accessible chart with a table view, reduced-motion support, and no build step.
 
 ## Files
 
@@ -22,7 +23,8 @@ One hand-written page, with no framework and no build step:
 | `Dinesh_Kumar_Resume.pdf` | Résumé behind the download links |
 | `og.png` | 1200×630 link preview for LinkedIn, Slack, X |
 | `apple-touch-icon.png` | Home-screen icon |
-| `dinesh_profile.jpeg` | Portrait |
+| `assets/` | Project screenshots and the portrait cutout (WebP) |
+| `dinesh_profile.jpeg` | Original portrait |
 
 ## Run locally
 
