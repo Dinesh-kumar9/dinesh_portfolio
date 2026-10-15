@@ -1,23 +1,37 @@
-# Dinesh Kumar Pathipati — AI / ML Engineer Portfolio
+# Dinesh Kumar Pathipati — AI / ML Engineer
 
-Live: **https://portfolio-one-flame-92.vercel.app**
+**Live:** https://portfolio-one-flame-92.vercel.app
 
-Personal portfolio for AI Engineer and ML Engineer roles. Highlights:
+![Portfolio preview](og.png)
 
-- **Crop Disease Identification** — MobileNetV2 transfer learning (~90% accuracy, 10+ classes), published in IJMRT
-- **MLOps Observability Platform** — stage-wise drift detection (KS test, ADWIN) with root-cause attribution
-- **Reel Intelligence** — Gemini-powered LLM agent, 3rd place at PromptWars (Hack2Skill)
-- **RGMCET Eduflow** — serverless AWS platform used by ~5,000 students
+One hand-written page, with no framework and no build step:
 
-## Stack
+- **Four case studies**, each with an architecture diagram, results and the decisions behind them:
+  crop-disease detection (published; 95.1% accuracy on field images with a 14 MB model),
+  Reel Intelligence (LLM agent, 3rd of 600+ at PromptWars), RGMCET Eduflow (serverless AWS, ~5,000 users),
+  and an MLOps drift-attribution platform (in progress, Phase 1 of 4 shipped).
+- **An interactive drift lab**: a two-sample Kolmogorov–Smirnov test that runs in the browser.
+  Shift the live data and watch the statistic and p-value respond.
+- Light and dark themes, a keyboard-accessible chart with a table view, and reduced-motion support.
 
-A single static `index.html` (HTML, CSS, vanilla JS) with no build step, deployed on Vercel.
-`Dinesh_Kumar_Resume.pdf` is served alongside it for the resume download.
+## Files
+
+| File | Purpose |
+|---|---|
+| `index.html` | The whole site: markup, styles and scripts |
+| `Dinesh_Kumar_Resume.pdf` | Résumé behind the download links |
+| `og.png` | 1200×630 link preview for LinkedIn, Slack, X |
+| `apple-touch-icon.png` | Home-screen icon |
+| `dinesh_profile.jpeg` | Portrait |
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder:
-
 ```bash
 python -m http.server 8000
+```
+
+## Deploy
+
+```bash
+vercel --prod
 ```
